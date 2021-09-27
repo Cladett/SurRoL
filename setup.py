@@ -20,9 +20,9 @@ if __name__ == '__main__':
 
          },
         install_requires=[
+            "numpy>=1.21.1",
             "gym>=0.15.6",
             "pybullet>=3.0.7",
-            "numpy>=1.21.1",
             "scipy",
             "pandas",
             "imageio",
