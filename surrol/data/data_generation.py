@@ -54,7 +54,7 @@ def main():
     file_name += ".npz"
 
     folder = 'demo' if not args.video else 'video'
-    folder = os.path.join(ROOT_DIR_PATH, 'data', folder)
+    folder = os.path.join(os.path.abspath(os.path.dirname('data')), folder)
 
     np.savez_compressed(os.path.join(folder, file_name),
                         acs=actions, obs=observations, info=infos)  # save the file
