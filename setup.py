@@ -9,8 +9,17 @@ if __name__ == '__main__':
         author='Med-AIR@CUHK',
         keywords='simulation, medical robotics, dVRK, reinforcement learning',
         packages=[
-            'surrol',
+            'surrol', 'surrol.tasks', 'surrol.gym', 'surrol.utils',
+            'surrol.robots',
         ],
+        package_dir={
+            'surrol': 'surrol',
+            'surrol.tasks': 'surrol/tasks',
+            'surrol.gym': 'surrol/gym',
+            'surrol.utils': 'surrol/utils',
+            'surrol.robots': 'surrol/robots',
+
+        },
         install_requires=[
             "gym>=0.15.6",
             "pybullet>=3.0.7",
@@ -21,15 +30,14 @@ if __name__ == '__main__':
             "imageio-ffmpeg",
             "opencv-python",
             "roboticstoolbox-python",
+            "sympy",
+            "cvxopt",
         ],
         extras_require={
             # optional dependencies, required by evaluation, test, etc.
             "all": [
                 "tensorflow-gpu==1.14",
-                "baselines",
                 "mpi4py",  # important for ddpg
-                "ipython",
-                "jupyter",
             ]
         }
     )
